@@ -54,16 +54,16 @@
 	}
 	/**
 	 * 
-	 * @return double The numerator of this fraction object
+	 * @return int The numerator of this fraction object
 	 */
-	public double getNum() {
+	public int getNum() {
 		return (numerator);
 	}
 	/**
 	 * 
-	 * @return double The denominator of this fraction object
+	 * @return int The denominator of this fraction object
 	 */
-	public double getDen() {
+	public int getDen() {
 		return (denominator);
 	}
 	/**
