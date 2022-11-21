@@ -128,7 +128,8 @@
 		return new Fraction(frac.denominator, frac.numerator);
 	}
 	/**
-	 * 
+	 * Postconditions:
+	 * 			Expressed in the lowest term.
 	 * @param frac1 The first fraction is being added
 	 * @param frac2	The second fraction is being added
 	 * @return Fraction The sum of the two fractions
@@ -139,7 +140,8 @@
 		return result;
 	}
 	/**
-	 * 
+	 * Postconditions:
+	 * 			Expressed in the lowest term.
 	 * @param frac The fraction that is being added by another fraction object
 	 * @return Fraction The sum of the two fractions
 	 */
@@ -149,7 +151,8 @@
 		return result;
 	}
 	/**
-	 * 
+	 * Postconditions:
+	 * 			Expressed in the lowest term.
 	 * @param frac1 The subtracting fraction 
 	 * @param frac2 The fraction that is subtracted from frac1
 	 * @return Fraction The difference of the two fractions
@@ -160,7 +163,8 @@
 		return result;
 	}
 	/**
-	 * 
+	 * Postconditions:
+	 * 			Expressed in the lowest term.
 	 * @param frac The fraction that is subtracted from the other fraction object
 	 * @return Fraction The difference of the two fractions
 	 */
@@ -170,7 +174,8 @@
 		return result;
 	}
 	/**
-	 * 
+	 * Postconditions:
+	 * 			Expressed in the lowest term.
 	 * @param frac1 The first fraction that is being multiplied
 	 * @param frac2 The second fraction that is being multiplied
 	 * @return Fraction The product of the two fractions
@@ -181,7 +186,8 @@
 		return result;
 	}
 	/**
-	 * 
+	 * Postconditions:
+	 * 			Expressed in the lowest term.
 	 * @param frac The fraction that is being multiplied by the other fraction object
 	 * @return Fraction The product of the two fractions
 	 */
@@ -191,20 +197,32 @@
 		return result;
 	}
 	/**
-	 * 
+	 * Postconditions:
+	 * 			If it is dividing by 0, returns null and error message.
+	 * 			Expressed in the lowest term.
 	 * @param frac1 The first fraction that is getting divided by
 	 * @param frac2 The second fraction that is dividing
 	 * @return Fraction The ratio or the quotient of the two fractions
 	 */
 	public static Fraction divide(Fraction frac1, Fraction frac2) {
+		if(frac2.toDecimal()==0) {
+			System.out.println("You can not divided by 0");
+			return null;
+		}
 		return Fraction.multiply(frac1, reciprocal(frac2));
 	}
 	/**
-	 * 
+	 * Postconditions:
+	 * 			If it is dividing by 0, returns null and error message.
+	 * 			Expressed in the lowest term.
 	 * @param frac The fraction that is dividing
 	 * @return Fraction The ratio or the quotient of the two fractions
 	 */
 	public Fraction divide(Fraction frac) {
+		if(frac.toDecimal()==0) {
+			System.out.println("You can not divided by 0");
+			return null;
+		}
 		return Fraction.multiply(new Fraction(numerator, denominator), reciprocal(frac));
 	}
 	/**
